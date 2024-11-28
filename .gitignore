@@ -1,0 +1,27 @@
+
+### **B. Ensure `.gitignore` is Properly Configured**
+
+Create a `.gitignore` file to exclude sensitive data and unnecessary files from being pushed to GitHub.
+
+**`.gitignore`:**
+
+```gitignore
+# Python compiled files
+__pycache__/
+*.pyc
+
+# Data directories
+saved_responses/
+cleaned_data/
+
+# Environment files
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Postman Collection (if not ready to be shared)
+Content/Postman_Collection/postman_collection.json
+
+# Logs
+app.log

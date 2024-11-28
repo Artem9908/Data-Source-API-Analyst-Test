@@ -14,6 +14,7 @@ def create_headers(token):
     headers = {
         'Authorization': f'token {token}',
         'Accept': 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28'
+        'X-GitHub-Api-Version': '2022-11-28',
+        'User-Agent': 'DataSourceAPIAnalystTest' 
     }
     return headers

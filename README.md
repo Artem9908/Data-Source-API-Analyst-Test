@@ -1,42 +1,73 @@
-# Data Source API Analyst Test
+# Data-Source-API-Analyst-Test
 
 ## Introduction
 
-This repository contains my submission for the Data Source API Analyst assignment. The goal is to demonstrate proficiency in working with APIs, data extraction, and troubleshooting by interacting with the GitHub API.
+This repository demonstrates interaction with the GitHub API for data extraction and processing using Python within a Google Colab environment.
 
-## Client Requirements
+## Project Structure
 
-The client requires the following functionality:
 
-1. **Search for public repositories** based on specific keywords or topics.
-2. **Retrieve commit history** for any repository to analyze changes over time.
-3. **Access repository contents** to review specific files or the structure of a repository.
-4. Ensure the solution handles **pagination**, **rate limits**, and **error scenarios** for smooth and efficient data extraction.
+## Setup Instructions
 
-This project addresses these requirements by implementing secure authentication, API interaction, and validation using Python and Google Colab.
+1. **Open the Google Colab Notebook:**
+   - Navigate to `Content/Postman_Collection/GitHub_API_test.ipynb` and open it in Google Colab.
 
----
+2. **Upload the `Content.zip` File:**
+   - Ensure that the `Content` folder is zipped as `Content.zip`.
+   - Run **Cell 1** to upload and unzip the folder.
 
-## Approach to Client Requirements
+3. **Update Python Path:**
+   - Run **Cell 2** to add necessary subdirectories to Python's `sys.path`.
 
-To meet the client's needs, the following approach was taken:
+4. **Import Modules:**
+   - Run **Cell 3** to import required libraries and custom modules.
 
-1. **Research GitHub API**:  
-   - Researched API endpoints for searching repositories, listing commits, and retrieving repository contents.  
-   - Analyzed rate limits and implemented handling for pagination and errors.
+5. **Create Necessary Directories:**
+   - Run **Cell 4** to ensure `saved_responses` and `cleaned_data` directories exist.
 
-2. **Secure Authentication**:  
-   - Used a Personal Access Token (PAT) to ensure secure and reliable authentication for API requests.
+6. **Authenticate with GitHub:**
+   - Run **Cell 5** and enter your GitHub Personal Access Token when prompted.
 
-3. **Implementation**:  
-   - Designed modular Python functions to handle specific tasks like fetching data, managing rate limits, and processing paginated responses.
+7. **Define Helper Functions:**
+   - Run **Cell 6** to define the `save_to_csv` function.
 
-4. **Validation**:  
-   - Tested each function using a Google Colab notebook and printed outputs for verification.
+8. **Data Extraction:**
+   - Run **Cells 7-17** sequentially to perform data extraction tasks.
 
----
+9. **Final Checks:**
+   - Run **Cell 18** to check the final rate limit status and confirm completion.
 
-## Repository Structure
+## Using the Postman Collection
 
-The repository is organized as follows:
+1. **Import the Collection:**
+   - Open Postman.
+   - Click **Import** > **File**.
+   - Select `Content/Postman_Collection/postman_collection.json`.
+   - Click **Import**.
 
+2. **Set Up Environment Variables:**
+   - Create a new environment named `GitHub API`.
+   - Add a variable `github_token` with your GitHub PAT as its value.
+
+3. **Replace Placeholders:**
+   - In each request's **Authorization** header, ensure `{{github_token}}` is used.
+
+4. **Test Requests:**
+   - Select the `GitHub API` environment.
+   - Execute each request and verify the responses.
+
+## Dependencies
+
+- **Python Packages:**
+  - `requests`
+  - `json`
+  - `os`
+  - `time`
+  - `getpass`
+  - `pandas`
+  - `python-dotenv` (if using environment variables)
+
+- **Install dependencies using `pip`:**
+
+  ```python
+  !pip install requests pandas python-dotenv
